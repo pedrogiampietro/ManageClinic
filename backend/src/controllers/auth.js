@@ -9,7 +9,7 @@ const router = express.Router()
 
 const saltRounds = 10
 
-router.post('/sign-in', accountSignIn, async (req, res) => {
+router.post('/sign-in', accountSignIn, async (req, zres) => {
 	const { email, password } = req.body
 	const account = await Account.findOne({ where: { email } })
 
